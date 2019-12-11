@@ -1,10 +1,12 @@
 version: 0.2
 
 phases:
-  pre_build:
-    commands:
-      - npm install --no-progress --silent
+  install:
+    runtime-versions:
+        node: 10.16.0
   build:
     commands:
-      - npm run-script lint
-      - npm run test
+      - node --v
+artifacts:
+  files:
+    -  README.md
